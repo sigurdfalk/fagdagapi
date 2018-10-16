@@ -1,13 +1,14 @@
 package no.falk.fagdagapi
 
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/feedback")
-class FeedbackResource {
+class FeedbackResource(private val feedbackRepository: FeedbackRepository) {
 
     @GetMapping
-    fun test() = "tada!"
+    fun ping() = "pong!"
+
+    @PostMapping
+    fun test(@RequestBody feedback: Feedback) = feedbackRepository.insert(feedback)
 }
