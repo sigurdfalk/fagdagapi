@@ -1,3 +1,4 @@
 spring:
-  datasource:
-    url: ${MONGODB_URI}
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
