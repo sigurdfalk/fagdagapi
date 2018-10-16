@@ -1,0 +1,13 @@
+package no.falk.fagdagapi
+
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RestController
+
+@RestController
+@RequestMapping("/feedback")
+class FeedbackResource {
+
+    @GetMapping
+    fun test() = "tada!"
+}
