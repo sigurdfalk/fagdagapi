@@ -7,11 +7,11 @@ import javax.servlet.http.HttpServletRequest
 @RequestMapping("/feedback")
 class FeedbackResource(private val feedbackRepository: FeedbackRepository, private val httpServletRequest: HttpServletRequest) {
 
-    @CrossOrigin(origins = ["http://localhost:*"])
+    @CrossOrigin(origins = ["*"])
     @GetMapping
     fun findAll(): List<Feedback> = feedbackRepository.findAll()
 
-    @CrossOrigin(origins = ["http://localhost:*"])
+    @CrossOrigin(origins = ["*"])
     @PostMapping
     fun insert(@RequestBody feedback: Feedback) {
         val appName = httpServletRequest.getHeader("X-Klient-Navn")
